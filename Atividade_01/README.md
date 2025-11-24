@@ -95,3 +95,9 @@ Digite qualquer um destes comandos:
 ```bash
 typst compile respostas.typ respostas.pdf
 ```
+## Autor
+
+- **Aluno**: Eduardo Teixeira de Moura Silva
+- **Matrícula**: 20200047345
+- **Disciplina**: DIM0152 - Matemática para Computação I
+- **Semestre**: 2025.2

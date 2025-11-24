@@ -2,7 +2,7 @@
 
 Repositório contendo as atividades e implementações da disciplina **DIM0152 - Matemática para Computação I**.
 
-## 📚 Conteúdo
+## Conteúdo
 
 ### Atividade 01 - Aritmética de Peano e Indução Matemática
 
@@ -22,7 +22,7 @@ Implementação de algoritmos para:
 
 [Ver código →](Atividade_02/Arranjos.hs) | [Ver respostas →](Atividade_02/respostas.pdf)
 
-## 🛠️ Ambiente de Desenvolvimento
+## Ambiente de Desenvolvimento
 
 O projeto utiliza **Nix** para gerenciar dependências de forma reproduzível.
 
@@ -46,24 +46,24 @@ nix-shell
 # - Ferramentas de manipulação de PDF
 ```
 
-## 📖 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 MC/
 ├── Atividade_01/          # Primeira atividade
 │   ├── respostas.typ      # Respostas em Typst
 │   ├── Peano.hs           # Biblioteca Haskell
-│   ├── exemplos_peano.hs  # Exemplos de uso
 │   └── README.md          # Documentação específica
 ├── Atividade_02/          # Segunda atividade
 │   ├── respostas.typ      # Respostas em Typst
 │   └── Arranjos.hs        # Implementação Haskell
+│   └── README.md          # Documentação específica
 ├── shell.nix              # Configuração do ambiente Nix
 ├── .gitignore
 └── README.md              # Este arquivo
 ```
 
-## 🚀 Como Usar
+## Como Usar
 
 ### Compilar Documentos Typst
 
@@ -98,7 +98,7 @@ ghc Arranjos.hs -o arranjos
 ./arranjos
 ```
 
-## 📝 Disciplina
+## Dsciplina
 
 - **Código**: DIM0152
 - **Nome**: Matemática para Computação I
@@ -106,7 +106,7 @@ ghc Arranjos.hs -o arranjos
 - **Semestre**: 2025.2
 - **Instituição**: Universidade Federal do Rio Grande do Norte (UFRN)
 
-## 📄 Licença
+## Licença
 
 Este projeto é destinado a fins educacionais.
 
