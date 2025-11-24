@@ -1,7 +1,6 @@
 #set document(
   title: "Atividade de Reforço - DIM0152",
-  author: "",
-  date: datetime(year: 2025, month: 11, day: 24),
+  author: "Eduardo Teixeira de Moura Silva",
 )
 
 #set page(
