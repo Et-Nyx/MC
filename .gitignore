@@ -1,0 +1,28 @@
+# Arquivos compilados Haskell
+*.hi
+*.o
+peano_test
+*.exe
+
+# Arquivos compilados Typst (mantemos apenas o .typ)
+# O PDF pode ser gerado a partir do fonte
+
+# Arquivos do sistema
+.DS_Store
+*.swp
+*.swo
+*~
+.directory
+
+# Nix
+result
+result-*
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporários
+*.tmp
+*.bak
