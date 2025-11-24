@@ -61,12 +61,6 @@
   #text(size: 11pt)[
     *Matrícula:* 20200047345
   ]
-  
-  #v(0.5cm)
-  
-  #text(size: 11pt)[
-    *Data:* 24 de novembro de 2025
-  ]
 ]
 
 #pagebreak()
