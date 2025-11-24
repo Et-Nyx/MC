@@ -1,4 +1,4 @@
-# Arquivos compilados Haskell
+# Arquivos Haskell
 *.hi
 *.o
 peano_test
@@ -26,3 +26,7 @@ result-*
 # Temporários
 *.tmp
 *.bak
+
+# Rascunhos
+GUIA_RAPIDO.md
+exemplos-peano.hs

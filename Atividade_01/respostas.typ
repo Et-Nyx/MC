@@ -397,9 +397,7 @@ Para a questão 6, foi implementada uma biblioteca em Haskell que formaliza a ar
 
 A biblioteca está disponível no arquivo #link("file:///home/eter/Documentos/Projetos/Logica/Atividade_01/Peano.hs")[`Peano.hs`] e pode ser testada no REPL do GHC.
 
-== Estrutura da Implementação
-
-A biblioteca implementa:
+*Estrutura da Implementação:*
 
 1. *Tipo de Dados `Nat`*: Representa os números naturais usando os construtores de Peano
    - `Zero`: representa o número $0$
@@ -415,27 +413,5 @@ A biblioteca implementa:
    - Instância de `Show` para visualizar números de Peano
    - Funções auxiliares para converter entre `Int` e `Nat`
    - Funções de demonstração que mostram o passo a passo das operações
-
-== Exemplo de Uso
-
-Para utilizar a biblioteca, execute os seguintes comandos no terminal:
-
-```haskell
-$ nix-shell
-$ ghci Peano.hs
-
--- Criar números
-let dois = Succ (Succ Zero)
-let tres = Succ (Succ (Succ Zero))
-
--- Operações
-add dois tres        -- Resultado: Succ (Succ (Succ (Succ (Succ Zero))))
-mult dois tres       -- Resultado: seis
-maxNat dois tres     -- Resultado: tres
-
--- Demonstrações com passos
-demonstrateAdd 2 3
-demonstrateMult 2 3
-```
 
 A implementação completa com comentários detalhados e exemplos encontra-se no arquivo fonte.

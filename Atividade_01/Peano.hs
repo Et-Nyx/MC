@@ -1,15 +1,3 @@
-{-|
-Module      : Peano
-Description : Implementação da Aritmética de Peano
-Copyright   : (c) 2025
-License     : MIT
-Maintainer  : 
-Stability   : experimental
-
-Esta biblioteca implementa o sistema formal da aritmética de Peano,
-incluindo a definição dos números naturais e as operações fundamentais.
--}
-
 module Main where
 
 import Data.List (intercalate)
@@ -178,7 +166,7 @@ demonstrateMax x y = do
 menu :: IO ()
 menu = do
   putStrLn "\n╔════════════════════════════════════════════════════════╗"
-  putStrLn "║     Biblioteca de Aritmética de Peano em Haskell      ║"
+  putStrLn "║     Biblioteca de Aritmética de Peano em Haskell       ║"
   putStrLn "╚════════════════════════════════════════════════════════╝"
   putStrLn "\nOperações disponíveis:"
   putStrLn "1. Adição (a + b)"
