@@ -13,6 +13,15 @@ Respostas formalizadas abordando:
 
 [Ver detalhes →](Atividade_01/README.md)
 
+### Atividade 02 - Arranjos e Combinatória
+
+Implementação de algoritmos para:
+- Geração de arranjos com e sem repetição
+- Problemas de otimização combinatória (soma de subconjuntos)
+- Maior subarranjo crescente
+
+[Ver código →](Atividade_02/Arranjos.hs) | [Ver respostas →](Atividade_02/respostas.pdf)
+
 ## 🛠️ Ambiente de Desenvolvimento
 
 O projeto utiliza **Nix** para gerenciar dependências de forma reproduzível.
@@ -47,6 +56,8 @@ MC/
 │   ├── exemplos_peano.hs  # Exemplos de uso
 │   └── README.md          # Documentação específica
 ├── Atividade_02/          # Segunda atividade
+│   ├── respostas.typ      # Respostas em Typst
+│   └── Arranjos.hs        # Implementação Haskell
 ├── shell.nix              # Configuração do ambiente Nix
 ├── .gitignore
 └── README.md              # Este arquivo
@@ -74,6 +85,17 @@ ghc Peano.hs -o peano_test
 
 # Ou usar o REPL interativo
 ghci Peano.hs
+```
+
+### Executar Código da Atividade 02
+
+```bash
+nix-shell
+cd Atividade_02
+
+# Compilar e executar
+ghc Arranjos.hs -o arranjos
+./arranjos
 ```
 
 ## 📝 Disciplina
