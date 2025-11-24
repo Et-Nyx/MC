@@ -20,7 +20,7 @@
 
 #set heading(numbering: "1.")
 
-// Theorem environment styling
+// Teorema
 #let theorem(title, body) = {
   block(
     fill: rgb("#e8f4f8"),
@@ -54,7 +54,7 @@
   )
 }
 
-// Title page
+// Capa
 #align(center)[
   #text(size: 14pt, weight: "bold")[
     Universidade Federal do Rio Grande do Norte

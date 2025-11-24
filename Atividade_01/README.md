@@ -95,6 +95,7 @@ Digite qualquer um destes comandos:
 ```bash
 typst compile respostas.typ respostas.pdf
 ```
+
 ## Autor
 
 - **Aluno**: Eduardo Teixeira de Moura Silva

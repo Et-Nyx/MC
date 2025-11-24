@@ -20,7 +20,7 @@
 
 #set heading(numbering: "1.")
 
-// Title page
+// Capa
 #align(center)[
   #text(size: 14pt, weight: "bold")[
     Universidade Federal do Rio Grande do Norte

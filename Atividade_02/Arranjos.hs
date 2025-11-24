@@ -1,13 +1,3 @@
-{-|
-Module      : Arranjos
-Description : Soluções da Atividade 02 - Arranjos e Combinatória
-Copyright   : (c) 2025
-License     : MIT
-
-Implementação das questões solicitadas usando apenas recursos básicos da linguagem.
-Não são utilizadas bibliotecas externas para a lógica dos algoritmos.
--}
-
 module Main where
 
 -- Função auxiliar para imprimir listas
@@ -35,9 +25,6 @@ arranjosSemRepeticao elements m =
              xs <- arranjosSemRepeticao [e | e <- elements, e /= x] (m-1) ]
 
 -- Wrapper para a questão (a)
--- O enunciado menciona "utilizam n elementos". Em arranjos sem repetição,
--- se o tamanho é m, ele usa exatamente m elementos distintos.
--- Assumiremos que o usuário quer arranjos de tamanho m escolhidos de X.
 questaoA :: Show a => Eq a => [a] -> Int -> IO ()
 questaoA x m = do
     putStrLn $ "\n--- Questão (a): Arranjos sem repetição de tamanho " ++ show m ++ " ---"
@@ -98,8 +85,6 @@ subconjuntos [] = [[]]
 subconjuntos (x:xs) = [ x:ys | ys <- subconjuntos xs ] ++ subconjuntos xs
 
 -- Implementação da questão C
--- Estratégia: Gerar subconjuntos de X U Y, filtrar os que atendem as restrições
--- e pegar o de maior tamanho.
 questaoC :: [Int] -> [Int] -> Int -> Int -> Int -> IO ()
 questaoC x y m n p = do
     putStrLn $ "\n--- Questão (c): Maior subconjunto com soma " ++ show p ++ " ---"
@@ -111,13 +96,10 @@ questaoC x y m n p = do
     let comSomaP = [ s | s <- subs, soma s == p ]
     
     -- Filtra pelas restrições de quantidade (max m de X, max n de Y)
-    -- Nota: Se um elemento está em X e Y, assumimos que conta para um deles favoravelmente ou precisamos rastrear a origem?
-    -- O enunciado diz "X, Y contidos em N". Assumiremos que se houver interseção, o elemento pode contar para qualquer um.
-    -- Para simplificar, vamos considerar a contagem baseada na pertinência.
     let validos = [ s | s <- comSomaP, 
                         let (qx, qy) = contaOrigem x y s,
-                        qx <= m && qy <= n ] -- Essa lógica é simplista para interseção, mas serve para disjuntos
-    
+                        qx <= m && qy <= n ]
+
     -- Encontra o de maior tamanho
     let maior = encontraMaior validos
     
@@ -145,13 +127,12 @@ buscaCrescente [] atual melhor =
     if length atual > length melhor then atual else melhor
 buscaCrescente (x:xs) [] melhor = buscaCrescente xs [x] melhor
 buscaCrescente (x:xs) (last:rest) melhor =
-    if x >= last -- Crescente ou igual (não-decrescente)
-    then buscaCrescente xs (last:rest ++ [x]) melhor -- Ineficiente concatenar no fim, mas ok para "básico"
-    else -- Quebrou a sequência
+    if x >= last
+    then buscaCrescente xs (last:rest ++ [x]) melhor
+    else 
         let novoMelhor = if length (last:rest) > length melhor then (last:rest) else melhor
         in buscaCrescente xs [x] novoMelhor
 
--- Versão mais eficiente usando acumuladores
 maiorSubCrescente :: Ord a => [a] -> [a]
 maiorSubCrescente [] = []
 maiorSubCrescente lista = go lista [] []
@@ -159,18 +140,16 @@ maiorSubCrescente lista = go lista [] []
     go [] atual melhor = if length atual > length melhor then atual else melhor
     go (x:xs) [] melhor = go xs [x] melhor
     go (x:xs) atual@(last:_) melhor
-        | x >= last = go xs (x:atual) melhor -- Guarda invertido para eficiência
+        | x >= last = go xs (x:atual) melhor
         | otherwise = 
             let lenAtual = length atual
                 lenMelhor = length melhor
                 novoMelhor = if lenAtual > lenMelhor then atual else melhor
             in go xs [x] novoMelhor
 
-    -- Como guardamos invertido, precisamos reverter no final
     reverseList [] = []
     reverseList (x:xs) = reverseList xs ++ [x]
 
--- Implementação simplificada e direta (menos eficiente mas mais clara "básica")
 questaoD :: [Int] -> IO ()
 questaoD arr = do
     putStrLn $ "\n--- Questão (d): Maior subarranjo crescente ---"
@@ -183,7 +162,7 @@ encontraSubCrescente [] atual melhor =
     if length atual > length melhor then atual else melhor
 encontraSubCrescente (x:xs) [] melhor = encontraSubCrescente xs [x] melhor
 encontraSubCrescente (x:xs) atual melhor =
-    let ultimo = last atual -- Ineficiente para listas grandes, mas é "básico"
+    let ultimo = last atual
     in if x >= ultimo
        then encontraSubCrescente xs (atual ++ [x]) melhor
        else 
